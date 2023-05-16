@@ -1,4 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Roboto:wght@300;400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
+}
+
+/* --------------- navbar ----------------- */
+
+.navbar {
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  line-height: 26px;
+  box-shadow: 0 8px 6px -6px gray;
+  -webkit-box-shadow: 0 8px 6px -6px gray;
+}
+
+.nav-link {
+  font-weight: 500 !important;
+}
+
+.active {
+  border-bottom: 2px solid black;
+}
+
+.navbar-brand {
+  padding-left: 15px;
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 2px;
+}
+
+.icon {
+  margin-top: 2px;
+}
+
+.navbar-brand div {
+  padding-left: 8px;
+}
+
+/* --------------- footer ----------------- */
+
+.footer {
+  background: #f8f9fa;
+  padding: 10px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+}
+
+.footer a:hover {
+  color: blue;
+}
+
+/* --------------- page not found css -------------- */
+
+.pnf {
+  display: flex;
+  min-height: 65vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pnf-title {
+  font-size: 100px;
+  font-weight: 700;
+}
+
+.pnf-heading {
+  font-weight: normal;
+}
+
+.pnf-btn {
+  color: black;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.pnf-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+/* ------------------ contact us ------------------- */
+
+.contactus {
+  margin: 0;
+  padding: 0;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactus h3 {
+  background: rgb(52, 51, 51);
+  color: rgb(213, 226, 238);
 }
