@@ -3,7 +3,7 @@ import Layout from './../components/Layout';
 
 const Policy = () => {
   return (
-    <Layout>
+    <Layout title={'Privacy Policy - EShop App'}>
       <div className="row contactus ">
         <div className="col-md-6 ">
           <img

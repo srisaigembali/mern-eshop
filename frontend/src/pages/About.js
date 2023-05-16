@@ -3,7 +3,7 @@ import Layout from './../components/Layout';
 
 const About = () => {
   return (
-    <Layout>
+    <Layout title={'About Us - EShop App'}>
       <div className="row contactus ">
         <div className="col-md-6 ">
           <img
