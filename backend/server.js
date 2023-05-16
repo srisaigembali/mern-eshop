@@ -1,12 +1,21 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import morgan from 'morgan';
+import connectDB from './config/db.js';
 
 // configure .env
 dotenv.config();
 const PORT = process.env.PORT;
 
+// configure database
+connectDB();
+
 // rest object
 const app = express();
+
+// middlewares
+app.use(express.json());
+app.use(morgan('dev'));
 
 // rest apis
 app.get('/', (req, res) => {
