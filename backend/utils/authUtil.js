@@ -1,4 +1,4 @@
-import bcrypt, { hashSync } from 'bcrypt';
+import bcrypt from 'bcrypt';
 
 export const hashPassword = async (password) => {
   try {
