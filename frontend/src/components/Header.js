@@ -47,7 +47,7 @@ const Header = () => {
                   Category
                 </NavLink>
               </li>
-              {!auth.user ? (
+              {!auth?.user ? (
                 <>
                   <li className="nav-item">
                     <NavLink to="/register" className="nav-link">
@@ -73,7 +73,12 @@ const Header = () => {
                     </NavLink>
                     <ul className="dropdown-menu">
                       <li>
-                        <NavLink className="dropdown-item" to="/dashboard">
+                        <NavLink
+                          className="dropdown-item"
+                          to={`/dashboard/${
+                            auth?.user?.role === 'admin' ? 'admin' : 'user'
+                          }`}
+                        >
                           Dashboard
                         </NavLink>
                       </li>

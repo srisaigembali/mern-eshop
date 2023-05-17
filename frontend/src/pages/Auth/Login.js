@@ -22,8 +22,6 @@ const Login = () => {
         password,
       });
       if (res && res.data.success) {
-        toast.success(res.data && res.data.message);
-        alert(res.data.message);
         setAuth({
           ...auth,
           user: res.data.user,
@@ -31,14 +29,16 @@ const Login = () => {
         });
         localStorage.setItem('auth', JSON.stringify(res.data));
         navigate(location.state || '/');
+        toast.success(res.data && res.data.message);
+        // alert(res.data.message);
       } else {
         toast.error(res.data && res.data.message);
-        alert(res.data.message);
+        // alert(res.data.message);
       }
     } catch (error) {
       console.log(error);
       toast.error('Something went wrong!');
-      alert('Something went wrong!');
+      // alert('Something went wrong!');
     }
   };
 

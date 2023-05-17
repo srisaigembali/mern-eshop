@@ -6,6 +6,7 @@ import Spinner from '../Spinner';
 
 export const PrivateRoute = () => {
   const [ok, setOk] = useState(false);
+  // eslint-disable-next-line
   const [auth, setAuth] = useAuth();
 
   useEffect(() => {

@@ -21,17 +21,17 @@ const ForgotPassword = () => {
         answer,
       });
       if (res && res.data.success) {
-        toast.success(res.data && res.data.message);
-        alert(res.data.message);
         navigate('/login');
+        toast.success(res.data && res.data.message);
+        // alert(res.data.message);
       } else {
         toast.error(res.data.message);
-        alert(res.data.message);
+        // alert(res.data.message);
       }
     } catch (error) {
       console.log(error);
       toast.error('Something went wrong!');
-      alert('Something went wrong!');
+      // alert('Something went wrong!');
     }
   };
   return (
