@@ -5,7 +5,7 @@ import JWT from 'jsonwebtoken';
 // Post Register
 export const registerController = async (req, res) => {
   try {
-    const { name, email, password, phone, address } = req.body;
+    const { name, email, password, phone, address, answer } = req.body;
 
     // Validations
     if (!name) {
@@ -22,6 +22,9 @@ export const registerController = async (req, res) => {
     }
     if (!address) {
       return res.send({ message: 'Address is required' });
+    }
+    if (!answer) {
+      return res.send({ message: 'Answer is required' });
     }
 
     // check for existing user
@@ -41,6 +44,7 @@ export const registerController = async (req, res) => {
       password: hashedPassword,
       phone,
       address,
+      answer,
     }).save();
     res.status(201).send({
       success: true,
@@ -107,6 +111,41 @@ export const loginController = async (req, res) => {
     res.status(500).send({
       success: false,
       message: 'Error in login',
+      error,
+    });
+  }
+};
+
+// forgot password
+export const forgotPassWordController = async (req, res) => {
+  try {
+    const { email, answer, newPassword } = req.body;
+
+    // Validations
+    if (!email) res.status(400).send({ message: 'Email is required' });
+    if (!answer) res.status(400).send({ message: 'Answer is required' });
+    if (!newPassword)
+      res.status(400).send({ message: 'New password is required' });
+
+    // check for user
+    const user = await userModel.findOne({ email, answer });
+    if (!user) {
+      return res.status(404).send({
+        success: false,
+        message: 'Wrong Email or Answer',
+      });
+    }
+    const hashedPassword = await hashPassword(newPassword);
+    await userModel.findByIdAndUpdate(user._id, { password: hashedPassword });
+    res.status(200).send({
+      success: true,
+      message: 'Password Reset Successfully',
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      message: 'Something went wrong',
       error,
     });
   }
