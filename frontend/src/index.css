@@ -103,3 +103,14 @@
   background: rgb(52, 51, 51);
   color: rgb(213, 226, 238);
 }
+
+/* --------- products --------- */
+
+.product-link {
+  text-decoration: none !important;
+  color: black !important;
+}
+
+.card-title:hover {
+  color: blue;
+}

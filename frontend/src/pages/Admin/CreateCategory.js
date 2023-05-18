@@ -36,8 +36,8 @@ const CreateCategory = () => {
   const getAllCategories = async () => {
     try {
       const { data } = await axios.get('/api/category/get-categories');
-      if (data.success) {
-        setCategories(data.category);
+      if (data?.success) {
+        setCategories(data?.category);
       }
     } catch (error) {
       console.log(error);
@@ -57,7 +57,7 @@ const CreateCategory = () => {
         `/api/category/update-category/${selected._id}`,
         { name: updatedName }
       );
-      if (data.success) {
+      if (data?.success) {
         toast.success(`${updatedName} is updated`);
         setVisible(false);
         setUpdatedName('');
@@ -78,7 +78,7 @@ const CreateCategory = () => {
       const { data } = await axios.delete(
         `/api/category/delete-category/${cid}`
       );
-      if (data.success) {
+      if (data?.success) {
         toast.success(`category is deleted`);
         getAllCategories();
       } else {
@@ -100,6 +100,7 @@ const CreateCategory = () => {
           <div className="col-md-9">
             <h1>Manage Category</h1>
             <div className="p-3 w-50">
+              <h4>Create category</h4>
               <CategoryForm
                 handleSubmit={handleSubmit}
                 value={name}
@@ -148,7 +149,7 @@ const CreateCategory = () => {
             <Modal
               onCancel={() => setVisible(false)}
               footer={null}
-              visible={visible}
+              open={visible}
             >
               <h4>Update category</h4>
               <CategoryForm
