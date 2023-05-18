@@ -14,7 +14,7 @@ const Header = () => {
     });
     localStorage.removeItem('auth');
     toast.success('Logout Successful!');
-    alert('Logout Successful!');
+    // alert('Logout Successful!');
   };
   return (
     <>
