@@ -114,3 +114,11 @@
 .card-title:hover {
   color: blue;
 }
+
+/* ----------- dashboard -------------- */
+
+.dashboard-menu h4 {
+  background-color: #434343 !important;
+  color: white;
+  padding: 15px 0px;
+}
