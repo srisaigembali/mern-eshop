@@ -1,14 +1,18 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { GiShoppingBag } from 'react-icons/gi';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { useAuth } from '../context/Auth';
 import toast from 'react-hot-toast';
 import SearchInput from './Forms/SearchInput';
 import useCategory from '../Hooks/useCategory';
+import { useCart } from '../context/Cart';
+import { Badge } from 'antd';
 
 const Header = () => {
   const [auth, setAuth] = useAuth();
   const categories = useCategory();
+  const [cart] = useCart();
 
   const handleLogout = () => {
     setAuth({
@@ -122,9 +126,11 @@ const Header = () => {
                 </>
               )}
               <li className="nav-item">
-                <NavLink to="/cart" className="nav-link">
-                  Cart (0)
-                </NavLink>
+                <Badge count={cart?.length}>
+                  <NavLink to="/cart" className="nav-link">
+                    Cart <AiOutlineShoppingCart />
+                  </NavLink>
+                </Badge>
               </li>
             </ul>
           </div>

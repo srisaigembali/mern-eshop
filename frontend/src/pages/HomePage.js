@@ -5,6 +5,8 @@ import { Checkbox, Radio } from 'antd';
 import { Prices } from '../components/Prices';
 import { AiOutlineReload } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
+import { useCart } from '../context/Cart';
+import { toast } from 'react-hot-toast';
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -15,6 +17,7 @@ const HomePage = () => {
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
+  const [cart, setCart] = useCart();
 
   // get all categories
   const getAllCategories = async () => {
@@ -167,7 +170,17 @@ const HomePage = () => {
                   >
                     More details
                   </button>
-                  <button className="btn btn-secondary ms-1">
+                  <button
+                    className="btn btn-secondary ms-1"
+                    onClick={() => {
+                      setCart([...cart, p]);
+                      localStorage.setItem(
+                        'cart',
+                        JSON.stringify([...cart, p])
+                      );
+                      toast.success(`Item added to cart`);
+                    }}
+                  >
                     Add to cart
                   </button>
                 </div>
