@@ -4,6 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 import { useCart } from '../context/Cart';
+import '../styles/CategoryProductStyles.css';
 
 const CategoryProducts = () => {
   const params = useParams();
@@ -62,7 +63,7 @@ const CategoryProducts = () => {
                       >
                         More Details
                       </button>
-                      <button
+                      {/* <button
                         className="btn btn-secondary ms-1"
                         onClick={() => {
                           setCart([...cart, p]);
@@ -74,7 +75,7 @@ const CategoryProducts = () => {
                         }}
                       >
                         Add to cart
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                 </div>
