@@ -114,8 +114,8 @@ const HomePage = () => {
       <div className="row mt-2">
         <div className="col-md-2">
           {/* category filter */}
-          <h4 className="text-center">Filter by category</h4>
-          <div className="d-flex flex-column">
+          <h4 className="ms-4 mt-4">Filter by category</h4>
+          <div className="d-flex flex-column ms-4">
             {categories.map((c) => (
               <Checkbox
                 key={c._id}
@@ -128,8 +128,8 @@ const HomePage = () => {
             ))}
           </div>
           {/* price filter */}
-          <h4 className="text-center mt-4">Filter by price</h4>
-          <div className="d-flex flex-column">
+          <h4 className="ms-4 mt-4">Filter by price</h4>
+          <div className="d-flex flex-column ms-4">
             <Radio.Group onChange={(e) => setRadio(e.target.value)}>
               {Prices?.map((p) => (
                 <div key={p._id}>
@@ -139,7 +139,7 @@ const HomePage = () => {
             </Radio.Group>
           </div>
           {/* clear filters */}
-          <div className="d-flex flex-column">
+          <div className="d-flex flex-column ms-4 mt-4">
             <button
               className="btn btn-danger"
               onClick={() => window.location.reload()}

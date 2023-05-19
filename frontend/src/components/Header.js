@@ -125,10 +125,10 @@ const Header = () => {
                   </li>
                 </>
               )}
-              <li className="nav-item">
+              <li className="nav-item mt-1">
                 <Badge count={cart?.length}>
                   <NavLink to="/cart" className="nav-link">
-                    Cart <AiOutlineShoppingCart />
+                    <AiOutlineShoppingCart />
                   </NavLink>
                 </Badge>
               </li>

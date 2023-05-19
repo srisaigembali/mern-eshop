@@ -133,6 +133,15 @@
   color: blue;
 }
 
+.cat-btn {
+  padding: 40px 0px;
+  font-size: 24px;
+}
+.cat-btn:hover {
+  background-color: #434343;
+  color: white;
+}
+
 /* ----------- dashboard -------------- */
 
 .dashboard-menu h4 {
