@@ -4,8 +4,10 @@ import axios from 'axios';
 import { Checkbox, Radio } from 'antd';
 import { Prices } from '../components/Prices';
 import { AiOutlineReload } from 'react-icons/ai';
+import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
+  const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [checked, setChecked] = useState([]);
@@ -159,7 +161,12 @@ const HomePage = () => {
                     {p.description.substring(0, 30)}...
                   </p>
                   <p className="card-text">$ {p.price}</p>
-                  <button className="btn btn-primary ms-1">More details</button>
+                  <button
+                    className="btn btn-primary ms-1"
+                    onClick={() => navigate(`/product/${p.slug}`)}
+                  >
+                    More details
+                  </button>
                   <button className="btn btn-secondary ms-1">
                     Add to cart
                   </button>

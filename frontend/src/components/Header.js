@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { GiShoppingBag } from 'react-icons/gi';
 import { useAuth } from '../context/Auth';
 import toast from 'react-hot-toast';
+import SearchInput from './Forms/SearchInput';
 
 const Header = () => {
   const [auth, setAuth] = useAuth();
@@ -37,6 +38,7 @@ const Header = () => {
               <div>EShop</div>
             </Link>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+              <SearchInput />
               <li className="nav-item">
                 <NavLink to="/" className="nav-link ">
                   Home
