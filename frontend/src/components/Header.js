@@ -44,7 +44,7 @@ const Header = () => {
               <GiShoppingBag className="icon" />
               <div>EShop</div>
             </Link>
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav ms-auto me-5 mb-2 mb-lg-0">
               <SearchInput />
               <li className="nav-item">
                 <NavLink to="/" className="nav-link ">
