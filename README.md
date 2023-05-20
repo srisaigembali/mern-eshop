@@ -4,7 +4,7 @@
 
 cd frontend\
 npm install\
-npm start\
+npm start
 
 ## Backend Setup
 
