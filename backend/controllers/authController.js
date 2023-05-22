@@ -53,7 +53,7 @@ export const registerController = async (req, res) => {
       user,
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     res.status(500).send({
       success: false,
       message: 'Error in registration',
@@ -109,7 +109,7 @@ export const loginController = async (req, res) => {
       token,
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     res.status(500).send({
       success: false,
       message: 'Error in login',
@@ -144,7 +144,7 @@ export const forgotPassWordController = async (req, res) => {
       message: 'Password Reset Successfully',
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     res.status(500).send({
       success: false,
       message: 'Something went wrong',
@@ -158,7 +158,7 @@ export const testController = (req, res) => {
   try {
     res.send('Protected Routes');
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     res.send({ error });
   }
 };
@@ -191,7 +191,7 @@ export const updateProfileController = async (req, res) => {
       updatedUser,
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     res.status(400).send({
       success: false,
       message: 'Error while updating` profile',
@@ -209,7 +209,7 @@ export const getOrdersController = async (req, res) => {
       .populate('buyer', 'name');
     res.json(orders);
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     res.status(500).send({
       success: false,
       message: 'Error WHile Geting Orders',
@@ -228,7 +228,7 @@ export const getAllOrdersController = async (req, res) => {
       .sort({ createdAt: '-1' });
     res.json(orders);
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     res.status(500).send({
       success: false,
       message: 'Error WHile Geting Orders',
@@ -249,7 +249,7 @@ export const orderStatusController = async (req, res) => {
     );
     res.json(orders);
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     res.status(500).send({
       success: false,
       message: 'Error While Updateing Order',

@@ -13,7 +13,7 @@ const Products = () => {
       const { data } = await axios.get('/api/product/get-products');
       setProducts(data.products);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       toast.error('Something Went Wrong');
     }
   };

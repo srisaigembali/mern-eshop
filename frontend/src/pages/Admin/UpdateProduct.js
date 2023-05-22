@@ -35,7 +35,7 @@ const UpdateProduct = () => {
       setShipping(data.product.shipping);
       setCategory(data.product.category._id);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -52,7 +52,7 @@ const UpdateProduct = () => {
         setCategories(data?.category);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       toast.error('Something went wrong in getting catgeory');
     }
   };
@@ -83,7 +83,7 @@ const UpdateProduct = () => {
         navigate('/dashboard/admin/products');
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       toast.error('Something went wrong');
     }
   };
@@ -97,7 +97,7 @@ const UpdateProduct = () => {
       toast.success('Product Deleted Successfully');
       navigate('/dashboard/admin/products');
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       toast.error('Something went wrong');
     }
   };

@@ -26,7 +26,7 @@ const CartPage = () => {
         currency: 'USD',
       });
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -39,7 +39,7 @@ const CartPage = () => {
       setCart(myCart);
       localStorage.setItem('cart', JSON.stringify(myCart));
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -49,7 +49,7 @@ const CartPage = () => {
       const { data } = await axios.get('/api/product/braintree/token');
       setClientToken(data?.clientToken);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -72,7 +72,7 @@ const CartPage = () => {
       navigate('/dashboard/user/orders');
       toast.success('Payment Completed Successfully ');
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       setLoading(false);
     }
   };

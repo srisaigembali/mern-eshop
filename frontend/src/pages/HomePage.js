@@ -28,7 +28,7 @@ const HomePage = () => {
         setCategories(data?.category);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -46,7 +46,7 @@ const HomePage = () => {
       setProducts(data.products);
     } catch (error) {
       setLoading(false);
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -56,7 +56,7 @@ const HomePage = () => {
       const { data } = await axios.get('/api/product/product-count');
       setTotal(data?.total);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -73,7 +73,7 @@ const HomePage = () => {
       setLoading(false);
       setProducts([...products, ...data?.products]);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       setLoading(false);
     }
   };
@@ -106,14 +106,14 @@ const HomePage = () => {
       });
       setProducts(data?.products);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
   return (
     <Layout title={'ALl Products - Best offers '}>
       {/* banner image */}
       <img
-        src="/images/banner.jpg"
+        src="/images/banner2.jpg"
         className="banner-img"
         alt="bannerimage"
         width={'100%'}
