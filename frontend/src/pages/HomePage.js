@@ -63,7 +63,7 @@ const HomePage = () => {
   useEffect(() => {
     if (page === 1) return;
     loadMore();
-  }, [page]);
+  }, [page]); // eslint-disable-line
 
   //load more
   const loadMore = async () => {
@@ -91,11 +91,11 @@ const HomePage = () => {
 
   useEffect(() => {
     if (!checked.length || !radio.length) getAllProducts();
-  }, [checked.length, radio.length]);
+  }, [checked.length, radio.length]); // eslint-disable-line
 
   useEffect(() => {
     if (checked.length || radio.length) filterProduct();
-  }, [checked, radio]);
+  }, [checked, radio]); // eslint-disable-line
 
   // get filtered products
   const filterProduct = async () => {

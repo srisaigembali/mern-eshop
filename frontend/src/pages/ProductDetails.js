@@ -13,7 +13,7 @@ const ProductDetails = () => {
   //inital details
   useEffect(() => {
     if (params?.slug) getProduct();
-  }, [params?.slug]);
+  }, [params?.slug]); // eslint-disable-line
 
   //getProduct
   const getProduct = async () => {

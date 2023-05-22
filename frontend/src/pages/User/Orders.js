@@ -7,7 +7,7 @@ import { useAuth } from '../../context/Auth';
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
-  const [auth, setAuth] = useAuth();
+  const [auth] = useAuth();
   const getOrders = async () => {
     try {
       const { data } = await axios.get('/api/auth/orders');

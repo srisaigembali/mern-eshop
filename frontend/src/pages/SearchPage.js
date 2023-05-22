@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 const SearchPage = () => {
   const navigate = useNavigate();
-  const [values, setValues] = useSearch();
+  const [values] = useSearch();
 
   return (
     <Layout title={'Search results'}>

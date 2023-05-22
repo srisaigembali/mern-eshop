@@ -8,7 +8,7 @@ import { useAuth } from '../../context/Auth';
 const { Option } = Select;
 
 const AdminOrders = () => {
-  const [status, setStatus] = useState([
+  const [status] = useState([
     'Not Processed',
     'Processing',
     'Shipped',
@@ -16,7 +16,7 @@ const AdminOrders = () => {
     'cancelled',
   ]);
   const [orders, setOrders] = useState([]);
-  const [auth, setAuth] = useAuth();
+  const [auth] = useAuth();
   const getOrders = async () => {
     try {
       const { data } = await axios.get('/api/auth/all-orders');
@@ -32,7 +32,7 @@ const AdminOrders = () => {
 
   const handleChange = async (orderId, value) => {
     try {
-      const { data } = await axios.put(`/api/auth/order-status/${orderId}`, {
+      await axios.put(`/api/auth/order-status/${orderId}`, {
         status: value,
       });
       getOrders();

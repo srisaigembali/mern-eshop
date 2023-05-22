@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Layout from '../components/Layout';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { toast } from 'react-hot-toast';
-import { useCart } from '../context/Cart';
+// import { useCart } from '../context/Cart';
 import '../styles/CategoryProductStyles.css';
 
 const CategoryProducts = () => {
@@ -11,11 +10,11 @@ const CategoryProducts = () => {
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState([]);
-  const [cart, setCart] = useCart();
+  // const [cart, setCart] = useCart();
 
   useEffect(() => {
     if (params?.slug) getPrductsByCat();
-  }, [params?.slug]);
+  }, [params?.slug]); // eslint-disable-line
   const getPrductsByCat = async () => {
     try {
       const { data } = await axios.get(
