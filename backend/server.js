@@ -30,7 +30,7 @@ app.use(cors());
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb' }));
 app.use(morgan('dev'));
-app.use(express.static(path.join(__dirname, '../frontend/build')));
+// app.use(express.static(path.join(__dirname, '../frontend/build')));
 
 // routes
 app.use('/api/auth', authRoutes);
@@ -38,12 +38,12 @@ app.use('/api/category', categoryRoutes);
 app.use('/api/product', productRoutes);
 
 // rest apis
-// app.get('/', (req, res) => {
-//   res.send('<h1>Welcome To Eshop</h1>');
-// });
-app.use('*', function (req, res) {
-  res.sendFile(path.join(__dirname, '../frontend/build/index.html'));
+app.get('/', (req, res) => {
+  res.send('<h1>Welcome To Eshop</h1>');
 });
+// app.use('*', function (req, res) {
+//   res.sendFile(path.join(__dirname, '../frontend/build/index.html'));
+// });
 
 // run server
 app.listen(PORT, () => {
