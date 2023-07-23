@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "proxy": "https://mern-eshop-u016.onrender.com",
+  "proxy": "http://localhost:8000, https://mern-eshop-u016.onrender.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -128,7 +128,7 @@ const Header = () => {
               <li className="nav-item mt-1">
                 <Badge count={cart?.length}>
                   <NavLink to="/cart" className="nav-link">
-                    <AiOutlineShoppingCart />
+                    <AiOutlineShoppingCart size={'20px'} />
                   </NavLink>
                 </Badge>
               </li>

@@ -16,7 +16,7 @@ const CreateCategory = () => {
   // handle form
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { data } = await axios.post('/api/category/create-category', {
+    const { data } = await axios.post('https://mern-eshop-u016.onrender.com/api/category/create-category', {
       name,
     });
     if (data.success) {
@@ -35,7 +35,7 @@ const CreateCategory = () => {
   // get all categories
   const getAllCategories = async () => {
     try {
-      const { data } = await axios.get('/api/category/get-categories');
+      const { data } = await axios.get('https://mern-eshop-u016.onrender.com/api/category/get-categories');
       if (data?.success) {
         setCategories(data?.category);
       }
@@ -54,7 +54,7 @@ const CreateCategory = () => {
     e.preventDefault();
     try {
       const { data } = await axios.put(
-        `/api/category/update-category/${selected._id}`,
+        `https://mern-eshop-u016.onrender.com/api/category/update-category/${selected._id}`,
         { name: updatedName }
       );
       if (data?.success) {
@@ -76,7 +76,7 @@ const CreateCategory = () => {
   const handleDelete = async (cid) => {
     try {
       const { data } = await axios.delete(
-        `/api/category/delete-category/${cid}`
+        `https://mern-eshop-u016.onrender.com/api/category/delete-category/${cid}`
       );
       if (data?.success) {
         toast.success(`category is deleted`);

@@ -10,7 +10,7 @@ const Orders = () => {
   const [auth] = useAuth();
   const getOrders = async () => {
     try {
-      const { data } = await axios.get('/api/auth/orders');
+      const { data } = await axios.get('https://mern-eshop-u016.onrender.com/api/auth/orders');
       setOrders(data);
     } catch (error) {
       console.log(error);
@@ -31,7 +31,7 @@ const Orders = () => {
             <h1 className="text-center">Your Orders</h1>
             {orders?.map((o, i) => {
               return (
-                <div className="border shadow">
+                <div className="border shadow mb-5">
                   <table className="table">
                     <thead>
                       <tr>
@@ -59,7 +59,7 @@ const Orders = () => {
                       <div className="row mb-2 p-3 card flex-row" key={p._id}>
                         <div className="col-md-3">
                           <img
-                            src={`/api/product/product-photo/${p._id}`}
+                            src={`https://mern-eshop-u016.onrender.com/api/product/product-photo/${p._id}`}
                             className="card-img-top"
                             alt={p.name}
                             height={'200px'}
